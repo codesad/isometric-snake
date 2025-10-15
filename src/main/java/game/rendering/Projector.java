@@ -1,6 +1,6 @@
 package game.rendering;
 
-import game.Vec3;
+import game.utils.Vec3;
 
 import javax.swing.*;
 

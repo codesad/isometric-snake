@@ -1,5 +1,10 @@
 package game;
 
+import game.backend.Direction;
+import game.backend.World;
+import game.backend.WorldData;
+import game.backend.WorldSnapshot;
+
 public class ConsoleDemo {
     public static void main(String[] args) {
         World w = new World(new WorldData(5, 3));

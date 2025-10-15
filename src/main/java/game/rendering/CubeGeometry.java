@@ -1,6 +1,6 @@
 package game.rendering;
 
-import game.Vec3;
+import game.utils.Vec3;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
