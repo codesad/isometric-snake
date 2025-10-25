@@ -41,7 +41,7 @@ public class GuidePanel extends BackgroundPanel {
 
         gameplayTextArea = new JTextArea(gameplaySb.toString());
         gameplayTextArea.setFont(FontManager.get("oxygene", 30));
-        gameplayTextArea.setSize(1028, 1028);
+        gameplayTextArea.setSize(1024, 1024);
         gameplayTextArea.setForeground(new Color(33, 229, 174));
         gameplayTextArea.setOpaque(false);
         gameplayTextArea.setLineWrap(true);
@@ -51,16 +51,16 @@ public class GuidePanel extends BackgroundPanel {
         controlsLabel.setForeground(new Color(49, 241, 137));
 
         StringBuilder controlsSb = new StringBuilder();
-        controlsSb.append("MOVE UP-RIGHT: UP-ARROW\n");
-        controlsSb.append("MOVE UP-LEFT: LEFT-ARROW\n");
-        controlsSb.append("MOVE DOWN-LEFT: DOWN-ARROW\n");
-        controlsSb.append("MOVE DOWN-RIGHT: RIGHT-ARROW\n");
-        controlsSb.append("MOVE VERTICALLY UP: W\n");
+        controlsSb.append("MOVE UP-RIGHT:        UP-ARROW\n");
+        controlsSb.append("MOVE UP-LEFT:         LEFT-ARROW\n");
+        controlsSb.append("MOVE DOWN-LEFT:      DOWN-ARROW\n");
+        controlsSb.append("MOVE DOWN-RIGHT:     RIGHT-ARROW\n");
+        controlsSb.append("MOVE VERTICALLY UP:    W\n");
         controlsSb.append("MOVE VERTICALLY DOWN: S\n");
 
         controlsTextArea = new JTextArea(controlsSb.toString());
         controlsTextArea.setFont(FontManager.get("oxygene", 30));
-        controlsTextArea.setSize(1028, 1028);
+        controlsTextArea.setSize(750, 750);
         controlsTextArea.setForeground(new Color(33, 229, 174));
         controlsTextArea.setOpaque(false);
         controlsTextArea.setLineWrap(true);
