@@ -4,6 +4,7 @@ import game.backend.World;
 import game.backend.WorldData;
 import game.ui.components.panels.GamePanel;
 import game.ui.components.panels.MainMenuPanel;
+import game.ui.components.panels.SettingsPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,6 +26,7 @@ public class GameWindow extends JFrame {
         setLocationRelativeTo(null);
         add(container);
         container.add(new MainMenuPanel(this), Menu.MAIN_MENU.name());
+        container.add(new SettingsPanel(this), Menu.SETTINGS.name());
 
         container.setOpaque(false);
         container.setDoubleBuffered(true);
@@ -62,5 +64,9 @@ public class GameWindow extends JFrame {
 
     public void goMenu() {
         showAndFocus(Menu.MAIN_MENU.name());
+    }
+
+    public void goSettings() {
+        showAndFocus(Menu.SETTINGS.name());
     }
 }
