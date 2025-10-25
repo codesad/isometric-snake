@@ -1,10 +1,12 @@
 package game.ui.components.panels;
 
+import game.backend.WorldListener;
 import game.rendering.*;
 import game.rendering.textures.FontManager;
 import game.ui.AppContext;
 import game.ui.GameKeyListener;
 import game.ui.GameWindow;
+import game.ui.SoundPlayer;
 import game.ui.components.panels.internal.BackgroundPanel;
 import game.utils.Vec3;
 import game.backend.World;
@@ -24,6 +26,18 @@ public class GamePanel extends BackgroundPanel {
 
     public GamePanel(GameWindow gameWindow, World world) {
         super();
+
+        world.addListener(new WorldListener() {
+            @Override
+            public void onGameOver() {
+                SoundPlayer.play("/assets/sounds/game_over.wav");
+            }
+
+            @Override
+            public void onFoodEaten() {
+                SoundPlayer.play("/assets/sounds/food_collect.wav");
+            }
+        });
 
         this.gameWindow = gameWindow;
         this.world = world;

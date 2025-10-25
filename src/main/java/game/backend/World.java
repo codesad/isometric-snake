@@ -17,6 +17,8 @@ public class World {
     private int score;
     private boolean gameOver;
 
+    private final List<WorldListener> listeners = new ArrayList<>();
+
     public World(WorldData worldData) {
         this(worldData, new Random());
     }
@@ -26,6 +28,14 @@ public class World {
         this.rng = rng;
         this.foodSpawner = new FoodSpawner(worldData.getGrid(), rng);
         this.reset();
+    }
+
+    public void addListener(WorldListener listener) {
+        listeners.add(listener);
+    }
+
+    public void removeListener(WorldListener listener) {
+        listeners.remove(listener);
     }
 
     public void reset() {
@@ -46,6 +56,7 @@ public class World {
 
         if (!worldData.getGrid().inBounds(next) || snake.contains(next)) {
             gameOver = true;
+            for (var l : listeners) l.onGameOver();
             return;
         }
 
@@ -54,6 +65,7 @@ public class World {
 
         if (grow) {
             score++;
+            for (var l : listeners) l.onFoodEaten();
             food = foodSpawner.spawn(snake.segments());
         }
     }

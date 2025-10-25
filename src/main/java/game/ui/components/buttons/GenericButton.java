@@ -1,5 +1,6 @@
 package game.ui.components.buttons;
 
+import game.ui.SoundPlayer;
 import game.utils.ColourUtils;
 import game.rendering.textures.FontManager;
 
@@ -35,6 +36,10 @@ public class GenericButton extends JButton {
                 currentBgColor = BACKGROUND_COLOR;
                 repaint();
             }
+        });
+
+        addActionListener(e -> {
+            SoundPlayer.play("/assets/sounds/menu_3.wav");
         });
     }
 
