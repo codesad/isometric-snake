@@ -1,6 +1,5 @@
 package game.ui.components.panels;
 
-import game.rendering.Background;
 import game.rendering.textures.FontManager;
 import game.ui.AppContext;
 import game.ui.GameWindow;
@@ -43,9 +42,9 @@ public class MainMenuPanel extends BackgroundPanel {
         guideButton = new GenericButton("GUIDE");
         exitButton = new GenericButton("EXIT");
 
-        playButton.addActionListener(e -> {
-            gameWindow.playGame();
-        });
+        playButton.addActionListener(e -> gameWindow.playGame());
+
+        settingsButton.addActionListener(e -> gameWindow.goSettings());
 
         exitButton.addActionListener(e -> {
             gameWindow.dispose();
