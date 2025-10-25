@@ -53,12 +53,12 @@ public class GuidePanel extends BackgroundPanel {
         controlsLabel.setForeground(new Color(49, 241, 137));
 
         StringBuilder controlsSb = new StringBuilder();
-        controlsSb.append("MOVE UP-RIGHT:        UP-ARROW\n");
-        controlsSb.append("MOVE UP-LEFT:         LEFT-ARROW\n");
-        controlsSb.append("MOVE DOWN-LEFT:      DOWN-ARROW\n");
-        controlsSb.append("MOVE DOWN-RIGHT:     RIGHT-ARROW\n");
-        controlsSb.append("MOVE VERTICALLY UP:    W\n");
-        controlsSb.append("MOVE VERTICALLY DOWN: S\n");
+        controlsSb.append("MOVE UP-RIGHT:	  UP-ARROW\n");
+        controlsSb.append("MOVE UP-LEFT:	  LEFT-ARROW\n");
+        controlsSb.append("MOVE DOWN-LEFT:	  DOWN-ARROW\n");
+        controlsSb.append("MOVE DOWN-RIGHT:	  RIGHT-ARROW\n");
+        controlsSb.append("MOVE VERTICALLY UP:	  W\n");
+        controlsSb.append("MOVE VERTICALLY DOWN:	  S\n");
 
         controlsTextArea = new JTextArea(controlsSb.toString());
         controlsTextArea.setFont(FontManager.get("oxygene", 30));
