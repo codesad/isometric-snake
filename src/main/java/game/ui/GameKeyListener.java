@@ -40,7 +40,7 @@ public class GameKeyListener implements KeyListener {
             world.step();
             panel.stepTimer.restart();
 
-            SoundPlayer.play("/assets/sounds/pop.wav", 0.3f);
+            SoundPlayer.play("/assets/sounds/whoosh.wav", 0.3f);
         }
     }
 
