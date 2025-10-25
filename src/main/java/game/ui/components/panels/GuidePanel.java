@@ -13,8 +13,10 @@ import java.lang.StringBuilder;
 public class GuidePanel extends BackgroundPanel {
     private final JLabel titleLabel;
     private final JLabel gameplayLabel;
+    private final JLabel controlsLabel;
 
     private final JTextArea gameplayTextArea;
+    private final JTextArea controlsTextArea;
 
     private final GenericButton backButton;
 
@@ -44,6 +46,25 @@ public class GuidePanel extends BackgroundPanel {
         gameplayTextArea.setOpaque(false);
         gameplayTextArea.setLineWrap(true);
 
+        controlsLabel = new JLabel("CONTROLS");
+        controlsLabel.setFont(FontManager.get("oxygene", 50));
+        controlsLabel.setForeground(new Color(49, 241, 137));
+
+        StringBuilder controlsSb = new StringBuilder();
+        controlsSb.append("MOVE UP-RIGHT: UP-ARROW\n");
+        controlsSb.append("MOVE UP-LEFT: LEFT-ARROW\n");
+        controlsSb.append("MOVE DOWN-LEFT: DOWN-ARROW\n");
+        controlsSb.append("MOVE DOWN-RIGHT: RIGHT-ARROW\n");
+        controlsSb.append("MOVE VERTICALLY UP: W\n");
+        controlsSb.append("MOVE VERTICALLY DOWN: S\n");
+
+        controlsTextArea = new JTextArea(controlsSb.toString());
+        controlsTextArea.setFont(FontManager.get("oxygene", 30));
+        controlsTextArea.setSize(1028, 1028);
+        controlsTextArea.setForeground(new Color(33, 229, 174));
+        controlsTextArea.setOpaque(false);
+        controlsTextArea.setLineWrap(true);
+
         backButton = new GenericButton("BACK");
         backButton.addActionListener(e -> gameWindow.goMenu());
 
@@ -55,6 +76,8 @@ public class GuidePanel extends BackgroundPanel {
         gbc.gridy = 0; add(titleLabel, gbc);
         gbc.gridy++; add(gameplayLabel, gbc);
         gbc.gridy++; add(gameplayTextArea, gbc);
+        gbc.gridy++; add(controlsLabel, gbc);
+        gbc.gridy++; add(controlsTextArea, gbc);
         gbc.gridy++; add(backButton, gbc);
     }
 
