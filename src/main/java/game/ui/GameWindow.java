@@ -5,6 +5,7 @@ import game.backend.WorldData;
 import game.ui.components.panels.GamePanel;
 import game.ui.components.panels.MainMenuPanel;
 import game.ui.components.panels.SettingsPanel;
+import game.ui.components.panels.GuidePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +20,8 @@ public class GameWindow extends JFrame {
     enum Menu {
         MAIN_MENU,
         GAME,
-        SETTINGS
+        SETTINGS,
+        GUIDE
     }
 
     public GameWindow() {
@@ -31,6 +33,7 @@ public class GameWindow extends JFrame {
         add(container);
         container.add(new MainMenuPanel(this), Menu.MAIN_MENU.name());
         container.add(new SettingsPanel(this), Menu.SETTINGS.name());
+        container.add(new GuidePanel(this), Menu.GUIDE.name());
 
         container.setOpaque(false);
         container.setDoubleBuffered(true);
@@ -86,6 +89,10 @@ public class GameWindow extends JFrame {
 
     public void goSettings() {
         showAndFocus(Menu.SETTINGS.name());
+    }
+
+    public void goGuide() {
+        showAndFocus(Menu.GUIDE.name());
     }
 
     private void setAppIcon() {

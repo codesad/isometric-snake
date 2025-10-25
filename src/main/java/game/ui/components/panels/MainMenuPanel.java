@@ -46,6 +46,8 @@ public class MainMenuPanel extends BackgroundPanel {
 
         settingsButton.addActionListener(e -> gameWindow.goSettings());
 
+        guideButton.addActionListener(e -> gameWindow.goGuide());
+
         exitButton.addActionListener(e -> {
             gameWindow.dispose();
             System.exit(0);
