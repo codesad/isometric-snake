@@ -9,15 +9,18 @@ public class PersistentStorage {
 
     private int gridLength;
     private int highScore;
+    private int volume;
 
     public PersistentStorage() {
         this.gridLength = prefs.getInt("gridLength", 9);
         this.highScore = prefs.getInt("highScore", 0);
+        this.volume = prefs.getInt("volume", 100);
     }
 
     public void save() {
         prefs.putInt("gridLength", gridLength);
         prefs.putInt("highScore", highScore);
+        prefs.putInt("volume", volume);
     }
 
     public int getGridLength() {
@@ -27,6 +30,7 @@ public class PersistentStorage {
     public void setGridLength(int gridLength) {
         this.gridLength = gridLength;
         AppContext.setBackground(new Background(gridOffset(), AppContext.RNG));
+        save();
     }
 
     public int gridOffset() {
@@ -39,6 +43,15 @@ public class PersistentStorage {
 
     public void setHighScore(int highScore) {
         this.highScore = highScore;
+        save();
+    }
+
+    public int getVolume() {
+        return this.volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
         save();
     }
 }
