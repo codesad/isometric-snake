@@ -67,8 +67,6 @@ public class SettingsPanel extends BackgroundPanel {
         gridSlider.addChangeListener(e -> {
             int size = gridSlider.getValue();
             if (AppContext.persistentStorage().getGridLength() != size && size % 2 == 1) {
-                System.out.println(AppContext.persistentStorage().getGridLength());
-                System.out.println(size);
                 AppContext.persistentStorage().setGridLength(size);
             }
         });
