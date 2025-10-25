@@ -39,6 +39,8 @@ public class GameKeyListener implements KeyListener {
             world.setDirection(toDirection);
             world.step();
             panel.stepTimer.restart();
+
+            SoundPlayer.play("/assets/sounds/pop.wav", 0.3f);
         }
     }
 
