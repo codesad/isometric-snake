@@ -30,6 +30,7 @@ public class GamePanel extends BackgroundPanel {
         world.addListener(new WorldListener() {
             @Override
             public void onGameOver() {
+                SoundPlayer.stopLoop();
                 SoundPlayer.play("/assets/sounds/game_over.wav");
             }
 

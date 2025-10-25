@@ -56,6 +56,7 @@ public class GameWindow extends JFrame {
         var world = new World(worldData, AppContext.RNG);
 
         container.add(new GamePanel(this, world), Menu.GAME.name());
+        SoundPlayer.playLoop("/assets/sounds/bg.wav", AppContext.persistentStorage().getVolume() / 100f / 2);
 
         SwingUtilities.invokeLater(() -> {
             showAndFocus(Menu.GAME.name());

@@ -31,7 +31,10 @@ public class GameKeyListener implements KeyListener {
             case KeyEvent.VK_DOWN -> toDirection = Direction.NEG_Z;
             case KeyEvent.VK_W -> toDirection = Direction.NEG_Y;
             case KeyEvent.VK_S -> toDirection = Direction.POS_Y;
-            case KeyEvent.VK_ESCAPE -> panel.gameWindow.goMenu();
+            case KeyEvent.VK_ESCAPE -> {
+                SoundPlayer.stopLoop();
+                panel.gameWindow.goMenu();
+            }
         }
 
 
