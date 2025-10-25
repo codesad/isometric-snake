@@ -34,10 +34,11 @@ public class GuidePanel extends BackgroundPanel {
 
         StringBuilder gameplaySb = new StringBuilder();
         gameplaySb.append("YOU ARE A VERY HUNGRY SNAKE TRYING TO EAT AS MUCH FRUIT AS YOU CAN\n\n");
-        gameplaySb.append("HOWEVER, CRUEL NATURE HAS DECIDED TO MAKE IT DIFFICULT FOR YOU, AND PUT YOU IN AN ISOMORPHIC 3D WORLD\n\n");
+        gameplaySb.append("SADLY, CRUEL NATURE HAS DECIDED TO MAKE IT DIFFICULT FOR YOU, AND PUT YOU IN AN ISOMORPHIC 3D WORLD\n\n");
+        gameplaySb.append("HOWEVER, YOU CAN LUCKILY LOOP AROUND FROM ONE SIDE OF THE GRID TO THE OTHER\n\n");
         gameplaySb.append("COLLECT AS MUCH FRUIT AS POSSIBLE, AND GROW CONTINOUSLY LONGER ALL THE WHILE\n\n");
         gameplaySb.append("ALTHOUGH WATCH OUT, AS YOU GROW LONGER, YOU MIGHT GET STUCK AND ACCIDENTALLY CRASH INTO YOURSELF\n\n");
-        gameplaySb.append("THE MORE FRUIT YOU COLLECT, THE HIGHER YOUR SCORE");
+        gameplaySb.append("THE MORE FRUIT YOU COLLECT, THE HIGHER YOUR SCORE, BUT THE MORE DIFFICULT THE GAME BECOMES");
 
         gameplayTextArea = new JTextArea(gameplaySb.toString());
         gameplayTextArea.setFont(FontManager.get("oxygene", 30));
@@ -47,6 +48,8 @@ public class GuidePanel extends BackgroundPanel {
         gameplayTextArea.setLineWrap(true);
         gameplayTextArea.setWrapStyleWord(true);
         gameplayTextArea.setEditable(false);
+        gameplayTextArea.setHighlighter(null);
+        gameplayTextArea.setCaretColor(new Color(0, 0, 0, 0));
 
         controlsLabel = new JLabel("CONTROLS");
         controlsLabel.setFont(FontManager.get("oxygene", 50));
@@ -67,6 +70,8 @@ public class GuidePanel extends BackgroundPanel {
         controlsTextArea.setOpaque(false);
         controlsTextArea.setLineWrap(true);
         controlsTextArea.setEditable(false);
+        controlsTextArea.setHighlighter(null);
+        controlsTextArea.setCaretColor(new Color(0, 0, 0, 0));
 
         backButton = new GenericButton("BACK");
         backButton.addActionListener(e -> gameWindow.goMenu());
