@@ -8,6 +8,8 @@ import game.ui.components.panels.SettingsPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class GameWindow extends JFrame {
     private final CardLayout layout = new CardLayout();
@@ -32,6 +34,19 @@ public class GameWindow extends JFrame {
         container.setDoubleBuffered(true);
 
         goMenu();
+
+        // hacky fix for alt-tabbing on macOS.
+        // without this, the window doesn't regain focus when tabbing back in
+        addWindowFocusListener(new WindowAdapter() {
+            @Override
+            public void windowGainedFocus(WindowEvent e) {
+                SwingUtilities.invokeLater(() -> {
+                    var size = getSize();
+                    setSize(size.width + 1, size.height + 1);
+                    setSize(size);
+                });
+            }
+        });
     }
 
     public void showAndFocus(String name) {
