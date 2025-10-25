@@ -33,10 +33,10 @@ public class GuidePanel extends BackgroundPanel {
         gameplayLabel.setForeground(new Color(49, 241, 137));
 
         StringBuilder gameplaySb = new StringBuilder();
-        gameplaySb.append("YOU ARE A VERY HUNGRY SNAKE TRYING TO EAT AS MUCH\nFRUIT AS YOU CAN\n\n");
-        gameplaySb.append("HOWEVER, CRUEL NATURE HAS DECIDED TO MAKE IT DIFFICULT\nFOR YOU, AND PUT YOU IN AN ISOMORPHIC 3D WORLD\n\n");
-        gameplaySb.append("COLLECT AS MUCH FRUIT AS POSSIBLE, AND GROW CONTINOUSLYLONGER ALL THE WHILE\n\n");
-        gameplaySb.append("ALTHOUGH WATCH OUT, AS YOU GROW LONGER, YOU MIGHT\nGET STUCK AND ACCIDENTALLY CRASH INTO YOURSELF\n\n");
+        gameplaySb.append("YOU ARE A VERY HUNGRY SNAKE TRYING TO EAT AS MUCH FRUIT AS YOU CAN\n\n");
+        gameplaySb.append("HOWEVER, CRUEL NATURE HAS DECIDED TO MAKE IT DIFFICULT FOR YOU, AND PUT YOU IN AN ISOMORPHIC 3D WORLD\n\n");
+        gameplaySb.append("COLLECT AS MUCH FRUIT AS POSSIBLE, AND GROW CONTINOUSLY LONGER ALL THE WHILE\n\n");
+        gameplaySb.append("ALTHOUGH WATCH OUT, AS YOU GROW LONGER, YOU MIGHT GET STUCK AND ACCIDENTALLY CRASH INTO YOURSELF\n\n");
         gameplaySb.append("THE MORE FRUIT YOU COLLECT, THE HIGHER YOUR SCORE");
 
         gameplayTextArea = new JTextArea(gameplaySb.toString());
@@ -45,6 +45,8 @@ public class GuidePanel extends BackgroundPanel {
         gameplayTextArea.setForeground(new Color(33, 229, 174));
         gameplayTextArea.setOpaque(false);
         gameplayTextArea.setLineWrap(true);
+        gameplayTextArea.setWrapStyleWord(true);
+        gameplayTextArea.setEditable(false);
 
         controlsLabel = new JLabel("CONTROLS");
         controlsLabel.setFont(FontManager.get("oxygene", 50));
@@ -64,6 +66,7 @@ public class GuidePanel extends BackgroundPanel {
         controlsTextArea.setForeground(new Color(33, 229, 174));
         controlsTextArea.setOpaque(false);
         controlsTextArea.setLineWrap(true);
+        controlsTextArea.setEditable(false);
 
         backButton = new GenericButton("BACK");
         backButton.addActionListener(e -> gameWindow.goMenu());
