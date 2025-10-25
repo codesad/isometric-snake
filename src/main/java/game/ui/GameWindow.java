@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Objects;
 
 public class GameWindow extends JFrame {
     private final CardLayout layout = new CardLayout();
@@ -26,6 +27,7 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1200, 1200);
         setLocationRelativeTo(null);
+        setAppIcon();
         add(container);
         container.add(new MainMenuPanel(this), Menu.MAIN_MENU.name());
         container.add(new SettingsPanel(this), Menu.SETTINGS.name());
@@ -84,5 +86,15 @@ public class GameWindow extends JFrame {
 
     public void goSettings() {
         showAndFocus(Menu.SETTINGS.name());
+    }
+
+    private void setAppIcon() {
+        try {
+            var icon = new ImageIcon(Objects.requireNonNull(getClass().getResource("/assets/snake/food_cube.png"))).getImage();
+            setIconImage(icon);
+            Taskbar.getTaskbar().setIconImage(icon);
+        } catch (Exception e) {
+            System.err.println("Failed to set app icon: " + e.getMessage());
+        }
     }
 }
