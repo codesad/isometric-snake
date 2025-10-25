@@ -37,4 +37,8 @@ public class SoundPlayer {
         }
 
     }
+
+    public static void play(String path) {
+        play(path, AppContext.persistentStorage().getVolume() / 100f);
+    }
 }
